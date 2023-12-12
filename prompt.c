@@ -10,7 +10,6 @@
 
 void ela_prompt(char **prompt)
 {
-	*prompt = "#cisfun$ ";
 	if ((write(1, *prompt, strlen(*prompt))) == -1)
 	{
 		perror("prompt writing error");

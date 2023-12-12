@@ -15,25 +15,26 @@ int ela_line(char **buffer, size_t *buffsize)
 	ssize_t rd = 0;
 	size_t total = 0;
 	char *temp = NULL;
+	bool pipe_checker = false;
 	*buffer = malloc(*buffsize * sizeof(char));
 	if (!*buffer)
 	{
 		perror("memory allocation error");
 		exit(1);
 	}
-	while (1)
+	while (!pipe_checker)
 	{
-		rd = read(0, *buffer + total, 1);
+		if (isatty(STDIN_FILENO) == 0)
+			pipe_checker = true;
+		rd = read(0, *buffer + total, *buffsize - total);
 		if (rd == -1)
 		{
 			perror("line reading error");
 			exit(1);
 		}
 		total += rd;
-		if (rd == 0 || (*buffer)[total - 1] == '\n')
-		{
+		if ((*buffer)[total - 1] == '\n')
 			break;
-		}
 		if (total >= *buffsize)
 		{
 			*buffsize *= 2;
@@ -49,7 +50,7 @@ int ela_line(char **buffer, size_t *buffsize)
 	}
 	(*buffer)[total] = '\0';
 	if ((*buffer)[0] == '\n')
-		exit(0);
+		return (1);
 	return (0);
 }
 

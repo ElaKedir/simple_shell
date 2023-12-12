@@ -6,7 +6,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/wait.h>
-
+#include <stdbool.h>
 
 void ela_prompt(char **prompt);
 int ela_line(char **buffer, size_t *buffsize);
