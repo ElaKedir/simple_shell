@@ -41,7 +41,7 @@ list_t *ela_add_node(list_t **head, const char *str, int num)
  *
  * Return: size of list
  */
-list_t *ela_dd_node_end(list_t **head, const char *str, int num)
+list_t *ela_add_node_end(list_t **head, const char *str, int num)
 {
 	list_t *new_node, *node;
 
