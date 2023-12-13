@@ -205,8 +205,8 @@ int ela_unsetenv(ela_info *, char *);
 int ela__setenv(ela_info *, char *, char *);
 
 /* toem_history.c */
-char *get_history_file(ela_info *info);
-int write_history(ela_info *info);
+char *obtain_history_file(ela_info *info);
+int print_history(ela_info *info);
 int read_history(ela_info *info);
 int build_history_list(ela_info *info, char *buf, int linecount);
 int renumber_history(ela_info *info);
