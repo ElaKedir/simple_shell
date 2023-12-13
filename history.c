@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * get_history_file - A function that gets the history file
+ * obtain_history_file - A function that gets the history file
  * @info: parameter struct
  *
  * Return: allocated string containing history file
  */
 
-char *get_history_file(ela_info *info)
+char *obtain_history_file(ela_info *info)
 {
 	char *buff, *direcoryectory;
 
@@ -25,15 +25,15 @@ char *get_history_file(ela_info *info)
 }
 
 /**
- * write_history - A function that creates a file or appends to an existing file
+ * print_history - A function that creates a file or appends to an existing file
  * @info: the parameter struct
  *
  * Return: 1 on success, else -1
  */
-int write_history(ela_info *info)
+int print_history(ela_info *info)
 {
 	ssize_t fd;
-	char *filename = get_history_file(info);
+	char *filename = obtain_history_file(info);
 	list_t *n = NULL;
 
 	if (!filename)
@@ -65,7 +65,7 @@ int read_history(ela_info *info)
 	int i, z = 0, l_count = 0;
 	ssize_t fd, rdlen, fsize = 0;
 	struct stat st;
-	char *buf = NULL, *filename = get_history_file(info);
+	char *buf = NULL, *filename = obtain_history_file(info);
 
 	if (!filename)
 		return (0);
