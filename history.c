@@ -12,13 +12,13 @@ char *obtain_history_file(ela_info *info)
 	char *buff, *directory;
 
 	directory = ela_getenv(info, "HOME=");
-	if (!direcory)
+	if (!directory)
 		return (NULL);
-	buff = malloc(sizeof(char) * (_strlen(direcory) + _strlen(HIST_FILE) + 2));
+	buff = malloc(sizeof(char) * (_strlen(directory) + _strlen(HIST_FILE) + 2));
 	if (!buff)
 		return (NULL);
 	buff[0] = 0;
-	_strcpy(buff, direcory);
+	_strcpy(buff, directory);
 	_strcat(buff, "/");
 	_strcat(buff, HIST_FILE);
 	return (buff);
