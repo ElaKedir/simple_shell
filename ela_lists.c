@@ -34,14 +34,14 @@ list_t *ela_add_node(list_t **head, const char *str, int num)
 }
 
 /**
- * add_node_end - adds a node to the end of the list
+ * add_node_end - A function that adds a node to the end of the list
  * @head: address of pointer to head node
  * @str: str field of node
  * @num: node index used by history
  *
  * Return: size of list
  */
-list_t *aela_dd_node_end(list_t **head, const char *str, int num)
+list_t *ela_dd_node_end(list_t **head, const char *str, int num)
 {
 	list_t *new_node, *node;
 
@@ -75,27 +75,27 @@ list_t *aela_dd_node_end(list_t **head, const char *str, int num)
 }
 
 /**
- * print_list_str - prints only the str element of a list_t linked list
+ * print_list_str - A function that prints only the str element of a list_t linked list
  * @h: pointer to first node
  *
  * Return: size of list
  */
 size_t print_list_str(const list_t *h)
 {
-	size_t i = 0;
+	size_t j = 0;
 
 	while (h)
 	{
 		_puts(h->str ? h->str : "(nil)");
 		_puts("\n");
 		h = h->next;
-		i++;
+		j++;
 	}
 	return (i);
 }
 
 /**
- * delete_node_at_index - deletes node at given index
+ * delete_node_at_index - A function that deletes node at given index
  * @head: address of pointer to first node
  * @index: index of node to delete
  *
@@ -135,25 +135,26 @@ int delete_node_at_index(list_t **head, unsigned int index)
 }
 
 /**
- * free_list - frees all nodes of a list
+ * free_list - A function that frees all nodes of a list
  * @head_ptr: address of pointer to head node
  *
  * Return: void
  */
+
 void free_list(list_t **head_ptr)
 {
-	list_t *node, *next_node, *head;
+	list_t *n, *next_node, *head;
 
 	if (!head_ptr || !*head_ptr)
 		return;
 	head = *head_ptr;
-	node = head;
-	while (node)
+	n = head;
+	while (n)
 	{
-		next_node = node->next;
-		free(node->str);
-		free(node);
-		node = next_node;
+		next_node = n->next;
+		free(n->str);
+		free(n);
+		n = next_node;
 	}
 	*head_ptr = NULL;
 }
