@@ -11,7 +11,7 @@ char *obtain_history_file(ela_info *info)
 {
 	char *buff, *directory;
 
-	direcory = ela_getenv(info, "HOME=");
+	directory = ela_getenv(info, "HOME=");
 	if (!direcory)
 		return (NULL);
 	buff = malloc(sizeof(char) * (_strlen(direcory) + _strlen(HIST_FILE) + 2));
