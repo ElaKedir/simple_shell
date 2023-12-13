@@ -118,7 +118,7 @@ int build_history_list(ela_info *info, char *buf, int linecount)
 
 	if (info->history)
 		n = info->history;
-	add_node_end(&n, buf, linecount);
+	ela_add_node_end(&n, buf, linecount);
 
 	if (!info->history)
 		info->history = n;
