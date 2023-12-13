@@ -33,7 +33,7 @@ int ela_line(char **buffer, size_t *buffsize)
 			exit(1);
 		}
 		total += rd;
-		if ((*buffer)[total - 1] == '\n')
+		if (rd == 0 || (total > 0 && (*buffer)[total - 1] == '\n'))
 			break;
 		if (total >= *buffsize)
 		{
@@ -49,8 +49,8 @@ int ela_line(char **buffer, size_t *buffsize)
 		}
 	}
 	(*buffer)[total] = '\0';
-	if ((*buffer)[0] == '\n')
-		return (1);
+	if (rd == 0)
+		exit(0);
 	return (0);
 }
 

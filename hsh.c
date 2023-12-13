@@ -14,23 +14,26 @@ int main(void)
 	char *prompt = "#cisfun$ ";
 	size_t buffsize = 1024;
 	char *buffer = NULL;
+	int line_status;
 
-	if (isatty(STDIN_FILENO) == 0)
-	{
-		ela_line(&buffer, &buffsize);
-		ela_strtok(buffer, " \n\t");
-		free(buffer);
-		return (0);
-	}
+	signal(SIGINT, handle_sigint);
 
 	while (1)
 	{
 		ela_prompt(&prompt);
-		ela_line(&buffer, &buffsize);
-		ela_strtok(buffer, " \n\t");
+		line_status = ela_line(&buffer, &buffsize);
+		if (line_status == -1)
+		{
+			break;
+		}
+		if (strlen(buffer) > 0)
+		{
+			ela_strtok(buffer, " \n\t");
+		}
+		free(buffer);
+		buffer = NULL;
 	}
 
-	free(buffer);
 	return (0);
 }
 
