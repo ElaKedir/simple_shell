@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * add_node - adds a node to the start of the list
+ * ela_add_node - A function that adds a node to the start of the list
  * @head: address of pointer to head node
  * @str: str field of node
  * @num: node index used by history
  *
  * Return: size of list
  */
-list_t *add_node(list_t **head, const char *str, int num)
+list_t *ela_add_node(list_t **head, const char *str, int num)
 {
 	list_t *new_head;
 
@@ -41,7 +41,7 @@ list_t *add_node(list_t **head, const char *str, int num)
  *
  * Return: size of list
  */
-list_t *add_node_end(list_t **head, const char *str, int num)
+list_t *aela_dd_node_end(list_t **head, const char *str, int num)
 {
 	list_t *new_node, *node;
 
