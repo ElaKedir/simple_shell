@@ -226,7 +226,7 @@ list_t *node_starts_with(list_t *, char *, char);
 ssize_t get_node_index(list_t *, list_t *);
 
 /* toem_vars.c */
-int is_chain(ela_info *, char *, size_t *);
+int ela_is_chain(ela_info *, char *, size_t *);
 void check_chain(ela_info *, char *, size_t *, size_t, size_t);
 int replace_alias(ela_info *);
 int replace_vars(ela_info *);
