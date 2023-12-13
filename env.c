@@ -95,7 +95,7 @@ int populate_envlist(ela_info *info)
 	size_t j;
 
 	for (j = 0; environ[j]; j++)
-		add_node_end(&n, environ[j], 0);
+		ela_add_node_end(&n, environ[j], 0);
 	info->env = n;
 	return (0);
 }
