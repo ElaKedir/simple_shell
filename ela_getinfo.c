@@ -41,7 +41,7 @@ void set_ela_info(ela_info *info, char **av)
 			;
 		info->argc = i;
 
-		replace_alias(info);
+		ela_replace_alias(info);
 		replace_vars(info);
 	}
 }
