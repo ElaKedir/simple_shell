@@ -9,7 +9,7 @@
 
 char *obtain_history_file(ela_info *info)
 {
-	char *buff, *direcoryectory;
+	char *buff, *directory;
 
 	direcory = ela_getenv(info, "HOME=");
 	if (!direcory)
