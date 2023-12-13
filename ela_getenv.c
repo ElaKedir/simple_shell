@@ -90,7 +90,7 @@ int ela__setenv(ela_info *info, char *var, char *value)
 		}
 		n = n->next;
 	}
-	add_node_end(&(info->env), buffer, 0);
+	ela_add_node_end(&(info->env), buffer, 0);
 	free(buffer);
 	info->env_changed = 1;
 	return (0);
