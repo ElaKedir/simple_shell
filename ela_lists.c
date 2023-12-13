@@ -75,7 +75,8 @@ list_t *ela_add_node_end(list_t **head, const char *str, int num)
 }
 
 /**
- * print_list_str - A function that prints only the str element of a list_t linked list
+ * print_list_str - A function that prints only the str element
+ * of a list_t linked list
  * @h: pointer to first node
  *
  * Return: size of list
