@@ -25,7 +25,8 @@ char *obtain_history_file(ela_info *info)
 }
 
 /**
- * print_history - A function that creates a file or appends to an existing file
+ * print_history - A function that creates a file or appends to
+ * an existing file
  * @info: the parameter struct
  *
  * Return: 1 on success, else -1
