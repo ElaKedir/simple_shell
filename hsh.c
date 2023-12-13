@@ -11,7 +11,7 @@
 
 int main(void)
 {
-	char *prompt = "#cisfun$ ";
+	char *prompt = "$ ";
 	size_t buffsize = 1024;
 	char *buffer = NULL;
 	int line_status;
