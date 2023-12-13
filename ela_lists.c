@@ -82,16 +82,15 @@ list_t *ela_dd_node_end(list_t **head, const char *str, int num)
  */
 size_t print_list_str(const list_t *h)
 {
-	size_t j = 0;
+	size_t j;
 
-	while (h)
+	for (j = 0; h; j++)
 	{
 		_puts(h->str ? h->str : "(nil)");
 		_puts("\n");
 		h = h->next;
-		j++;
 	}
-	return (i);
+	return (j);
 }
 
 /**
