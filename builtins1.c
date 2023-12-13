@@ -57,7 +57,7 @@ int alias(ela_info *info, char *str)
 		return (unalias(info, str));
 
 	unalias(info, str);
-	return (add_node_end(&(info->alias), str, 0) == NULL);
+	return (ela_add_node_end(&(info->alias), str, 0) == NULL);
 }
 
 /**
