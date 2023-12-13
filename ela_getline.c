@@ -68,7 +68,7 @@ ssize_t get_input(ela_info *info)
 		ela_check_chain(info, buf, &j, q, len);
 		while (j < len)
 		{
-			if (ela_ela_is_chain(info, buf, &j))
+			if (ela_is_chain(info, buf, &j))
 				break;
 			j++;
 		}
