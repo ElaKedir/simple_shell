@@ -42,7 +42,7 @@ void set_ela_info(ela_info *info, char **av)
 		info->argc = i;
 
 		ela_replace_alias(info);
-		replace_vars(info);
+		ela_replace_vars(info);
 	}
 }
 
