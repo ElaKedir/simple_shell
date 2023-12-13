@@ -30,7 +30,7 @@ int hsh(ela_info *info, char **av)
 			_putchar('\n');
 		free_ela_info(info, 0);
 	}
-	write_history(info);
+	obtain_history(info);
 	free_ela_info(info, 1);
 	if (!from_pipe(info) && info->status)
 		exit(info->status);
